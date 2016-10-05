@@ -33,6 +33,12 @@ public class servicedaoimpl implements blogservicedao {
 	
 	}
 
+	@Override
+	public Blog editblog(int id) {
+		return blogdao.getblog(id);
+		
+	}
+
 
 
 	

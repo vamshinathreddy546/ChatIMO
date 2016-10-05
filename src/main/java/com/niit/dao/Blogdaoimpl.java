@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.models.Blog;
 @Repository
+@SuppressWarnings("deprecation")
 public class Blogdaoimpl implements Blogdao {
 	@Autowired
 	private SessionFactory sessionfactory;
@@ -21,25 +22,26 @@ public class Blogdaoimpl implements Blogdao {
 		
 		
 	}
-
+@Transactional
 public void delete(Blog blog) {
 	sessionfactory.getCurrentSession().delete(blog);
 	
 	
 }
-
+@SuppressWarnings("unchecked")
+@Transactional
 public List<Blog> allblogs() {
-	Criteria c = sessionfactory.getCurrentSession().createCriteria(Blog.class);
+	Criteria d = sessionfactory.getCurrentSession().createCriteria(Blog.class);
 	
-	List<Blog> list = c.list();
+	List<Blog> list = d.list();
 	
 	return list;
 }
-
-public Blog getblog(int bid) {
-	Criteria c= sessionfactory.getCurrentSession().createCriteria(Blog.class);
-	c.add(Restrictions.eq("id","bid"));
-	Blog blog = (Blog) c.uniqueResult();
+@Transactional
+public Blog getblog(int id) {
+	Criteria d= sessionfactory.getCurrentSession().createCriteria(Blog.class);
+	d.add(Restrictions.eq("id",id));
+	Blog blog = (Blog) d.uniqueResult();
 	return blog;
 }
 

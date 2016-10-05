@@ -17,8 +17,8 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<beans:property name="username" value="phanni" />
-		<beans:property name="password" value="phanni" />
+		<beans:property name="username" value="vamshi" />
+		<beans:property name="password" value="vamshi" />
 	</beans:bean>
 
 	<!-- Session factory object and Hibernate properties for Oracle Data source -->

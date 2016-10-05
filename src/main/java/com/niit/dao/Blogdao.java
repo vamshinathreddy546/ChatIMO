@@ -8,7 +8,7 @@ public interface Blogdao {
 	public void save(Blog blog);
 	public void delete(Blog blog);
 	public List<Blog> allblogs();
-	public Blog getblog(int bid);
+	public Blog getblog(int id);
 	
 
 }
